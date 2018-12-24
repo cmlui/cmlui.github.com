@@ -10,28 +10,19 @@
 
 <body>
 	<div id="app">
-		<div>
-			<div v-for="item in arr" :key="item" :style="{
-				color: 'red',
-				height: '560px',
-				width: '963px',
-				margin: '0 auto 4px',
-				background: `#fff url(${item}) no-repeat center center`
-			}"></div>
-		</div>
+					<div v-for="(item,index) in arr" :key="index" :style="{
+									color: 'red',
+									height: '560px',
+									width: '963px',
+									margin: '0 auto 4px',
+									background: `#fff url(image/p${index + 1}.jpg) no-repeat center center`
+								}"></div>
 	</div>
 	<script src="https://cdn.bootcss.com/vue/2.5.21/vue.min.js"></script>
 	<script>
 		new Vue({
 			el: '#app',
-			data: {
-				arr: []
-			},
-			created() {
-				for (let i = 0; i < 20; i++) {
-					this.arr.push(`image/p${i + 1}.jpg`)
-				}
-			}
+			data: { arr: Array(19) },
 		})
 	</script>
 </body>
